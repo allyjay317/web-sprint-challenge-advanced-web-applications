@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import { axiosWithAuth } from "../utilities/axiosWithAuth";
 
 const Login = () => {
   // make a post request to retrieve a token from the api
@@ -26,7 +27,7 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault()
-    Axios.post('http://localhost:5000/api/login', credentials)
+    axiosWithAuth().post('/login', credentials)
       .then(res => {
         setError('')
         localStorage.setItem('bubbleToken', res.data.payload)
