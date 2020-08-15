@@ -39,7 +39,7 @@ const Login = () => {
       })
   }
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h1>Welcome to the Bubble App!</h1>
       <form>
         <label htmlFor='username' onSubmit={handleLogin}>
@@ -53,7 +53,7 @@ const Login = () => {
         <button onClick={handleLogin}>Log in</button>
         {error && <p style={{ color: 'red' }}>Sorry, that login didn't seem to work</p>}
       </form>
-    </>
+    </div>
   );
 };
 

@@ -5,15 +5,17 @@ import Login from "./components/Root/Login";
 import "./styles.scss";
 import PrivateRoute from "./components/Root/PrivateRoute";
 import BubblePage from "./components/Bubble/BubblePage";
+import Header from "./components/Root/Header";
 
 function App() {
   return (
-    <Router>
+    <>
+      <Header />
       <div className="App">
         <Route exact path="/" component={Login} />
         <PrivateRoute path='/bubbles' component={BubblePage} />
       </div>
-    </Router>
+    </>
   );
 }
 
