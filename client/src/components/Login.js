@@ -30,6 +30,7 @@ const Login = () => {
       .then(res => {
         setError('')
         localStorage.setItem('bubbleToken', res.data.payload)
+        history.push('/bubbles')
       })
       .catch(err => {
         console.log(err.message)
